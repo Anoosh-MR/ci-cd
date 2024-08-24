@@ -1,14 +1,24 @@
+# Add 'code-change' label to any changes within the 'src' folder
 code-change:
-  - 'src/**'
+- changed-files:
+  - any-glob-to-any-file: 'src/**/*'
 
+# Add 'Assets-change' label to any changes within the 'src/assets' folder
 Assets-change:
-  - 'src/assets/**'
+- changed-files:
+  - any-glob-to-any-file: 'src/assets/**/*'
 
+# Add 'documentation' label to any changes to .md files or files within .github directory
 documentation:
-  - '*.md'
-  - '.github/**/*.md'
+- changed-files:
+  - any-glob-to-any-file:
+    - '*.md'
+    - '.github/**/*.md'
 
+# Add 'security' label to any changes to sensitive files
 security:
-  - '.env'
-  - 'package-lock.json'
-  - 'pnpm-lock.json'
+- changed-files:
+  - any-glob-to-any-file:
+    - '.env'
+    - 'package-lock.json'
+    - 'pnpm-lock.json'
