@@ -12,6 +12,7 @@ env:
 jobs:
   testing:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -33,7 +34,7 @@ jobs:
       - name: Run Test
         run: pnpm test
 
-      - name: Create test report
-        run: artiomtr/jest-coverage-report-action@v2
+      - name: Generate and post coverage report
+        uses: artiomtr/jest-coverage-report-action@v2
         with:
-          github-token: ${{ secrets.PAT }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
