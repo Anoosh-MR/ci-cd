@@ -28,7 +28,7 @@ jobs:
         run: pnpm install
 
       - name: Run tests
-        run: npx jest --coverage | tee ./coverage/coverage.txt && exit ${PIPESTATUS[0]}
+        run: mkdir -p coverage && npx jest --coverage | tee coverage/coverage.txt && exit ${PIPESTATUS[0]}
 
       - name: Jest Coverage Comment
         uses: MishaKav/jest-coverage-comment@main
