@@ -45,3 +45,4 @@ jobs:
           junitxml-path: ./junit.xml
           coverage-title: Test Coverage
           coverage-path: ./coverage.txt
+          github_token: ${{ secrets.GITHUB_TOKEN }}
