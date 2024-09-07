@@ -8,7 +8,7 @@ const config: Config = {
   transform: {
     ".(ts|tsx)": ["ts-jest", { tsconfig: "tsconfig.app.json" }],
   },
-
+  reporters: ["default", "jest-junit"],
   coveragePathIgnorePatterns: [
     "/node_modules/",
     "/coverage",
