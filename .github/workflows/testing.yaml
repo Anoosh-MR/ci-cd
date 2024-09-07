@@ -1,4 +1,4 @@
-name: "coverage Report"
+name: "Test and Coverage report"
 on:
   pull_request:
     branches:
