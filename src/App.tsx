@@ -1,8 +1,15 @@
-import reactLogo from "./assets/me.svg";
 import "./App.css";
+import Button from "./components/button/Button";
 
 function App() {
-  return <img src={reactLogo} className="logo react" alt="React logo" />;
+  const handleClick = () => {
+    alert("You have clicked the button!");
+  };
+  return (
+    <>
+      <Button label="Click" onClick={handleClick} />
+    </>
+  );
 }
 
 export default App;
