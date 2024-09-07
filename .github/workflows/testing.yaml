@@ -1,13 +1,12 @@
-name: Coverage report
+name: "coverage Report"
 on:
   pull_request:
     branches:
       - release/dev
+
 jobs:
   coverage:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: artiomtr/jest-coverage-report-action@v1.3
-        with:
-          github_token: ${{ secrets.PAT }}
+      - uses: actions/checkout@v3
+      - uses: ArtiomTr/jest-coverage-report-action@v2
