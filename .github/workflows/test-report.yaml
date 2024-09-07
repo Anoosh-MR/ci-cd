@@ -12,4 +12,4 @@ jobs:
         with:
           package-manager: pnpm
           github-token: ${{ secrets.PAT }}
-          test-script: npm run test
+          test-script: pnpm run test
