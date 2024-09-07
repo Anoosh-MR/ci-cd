@@ -5,6 +5,10 @@ on:
     branches:
       - release/dev
 
+env:
+  NODE_VERSION: ${{ fromJson(file('.github/workflows/config.yml')).node-version }}
+  PNPM_VERSION: ${{ fromJson(file('.github/workflows/config.yml')).pnpm-version }}
+
 jobs:
   testing:
     runs-on: ubuntu-latest
