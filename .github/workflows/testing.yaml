@@ -42,7 +42,7 @@ jobs:
           create-new-comment: false
           hide-summary: false
           junitxml-title: Overview
-          junitxml-path: ./coverage/junit.xml
+          junitxml-path: ./junit.xml
           coverage-title: Test Coverage
           coverage-path: ./coverage.txt
           github-token: ${{ secrets.PAT }}
