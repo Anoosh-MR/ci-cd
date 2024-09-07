@@ -10,5 +10,6 @@ jobs:
       - uses: actions/checkout@v2
       - uses: artiomtr/jest-coverage-report-action@v1.3
         with:
+          package-manager: pnpm
           github-token: ${{ secrets.PAT }}
           test-script: npm run test
