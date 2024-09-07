@@ -34,5 +34,6 @@ jobs:
         run: pnpm test
 
       - name: Create test report
-        run: npx github-actions-ctrf ./coverage/coverage-final.json
-        if: always()
+        run: artiomtr/jest-coverage-report-action@v2
+        with:
+          github-token: ${{ secrets.PAT }}
