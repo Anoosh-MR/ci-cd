@@ -33,5 +33,7 @@ jobs:
       - name: Upload coverage report
         uses: ArtiomTr/jest-coverage-report-action@v2
         with:
+          skip-step: all
           package-manager: pnpm
           github-token: ${{ secrets.PAT }}
+          output: comment, report-markdown
