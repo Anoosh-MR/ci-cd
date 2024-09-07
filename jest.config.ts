@@ -8,7 +8,16 @@ const config: Config = {
   transform: {
     ".(ts|tsx)": ["ts-jest", { tsconfig: "tsconfig.app.json" }],
   },
-  reporters: ["default", "jest-junit"],
+  reporters: [
+    "default",
+    [
+      "jest-junit",
+      {
+        outputDirectory: "./coverage",
+        outputName: "junit.xml",
+      },
+    ],
+  ],
   coverageReporters: ["json-summary", "clover", "text"],
   coveragePathIgnorePatterns: [
     "/node_modules/",

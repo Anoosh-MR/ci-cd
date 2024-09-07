@@ -28,7 +28,7 @@ jobs:
         run: pnpm install
 
       - name: Run tests
-        run: npx jest --coverage | tee ./coverage.txt && exit ${PIPESTATUS[0]}
+        run: mkdir -p coverage && npx jest --coverage | tee coverage/coverage.txt && exit ${PIPESTATUS[0]}
 
       - name: Jest Coverage Comment
         uses: MishaKav/jest-coverage-comment@main
@@ -41,7 +41,7 @@ jobs:
           create-new-comment: false
           hide-summary: false
           junitxml-title: Overview
-          junitxml-path: ./junit.xml
+          junitxml-path: ./coverage/junit.xml
           coverage-title: Test Coverage
-          coverage-path: ./coverage.txt
+          coverage-path: ./coverage/coverage.txt
           github-token: ${{ secrets.PAT }}
