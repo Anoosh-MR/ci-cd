@@ -8,6 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "test": "jest",
+    "test:report": "--ci --json --coverage --testLocationInResults --outputFile=report.json",
     "preview": "vite preview"
   },
   "dependencies": {
