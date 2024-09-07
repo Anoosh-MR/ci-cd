@@ -9,7 +9,7 @@ const config: Config = {
     ".(ts|tsx)": ["ts-jest", { tsconfig: "tsconfig.app.json" }],
   },
   reporters: ["default", "jest-junit"],
-  coverageReporters: ["clover", "text-summary", "html", "json"],
+  coverageReporters: ["json-summary", "clover", "text-summary"],
   coveragePathIgnorePatterns: [
     "/node_modules/",
     "/coverage",
