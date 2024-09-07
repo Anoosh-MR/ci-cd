@@ -1,40 +1,13 @@
-name: "Test and generate report"
-
+name: Coverage report
 on:
   pull_request:
     branches:
       - release/dev
-
-env:
-  NODE_VERSION: 20
-  PNPM_VERSION: 9
-
 jobs:
-  testing:
+  coverage:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: ${{ env.PNPM_VERSION }}
-          run_install: false
-
-      - name: Install dependencies
-        run: pnpm install
-
-      - name: Run Test
-        run: pnpm test
-
-      - name: Generate and post coverage report
-        uses: artiomtr/jest-coverage-report-action@v2
+      - uses: actions/checkout@v2
+      - uses: artiomtr/jest-coverage-report-action@v1.3
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
