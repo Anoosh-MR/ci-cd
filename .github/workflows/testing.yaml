@@ -5,13 +5,10 @@ on:
     branches:
       - release/dev
 
-env:
-  NODE_VERSION: 20
-  PNPM_VERSION: 9
-
 jobs:
   coverage:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -19,12 +16,12 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ env.NODE_VERSION }}
+          node-version: ${{ secrets.NODE_VERSION }}
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: ${{ env.PNPM_VERSION }}
+          version: ${{ secrets.PNPM_VERSION }}
           run_install: false
 
       - name: Install dependencies
@@ -37,4 +34,4 @@ jobs:
         uses: ArtiomTr/jest-coverage-report-action@v2
         with:
           package-manager: pnpm
-          github_token: ${{ secrets.PAT }}
+          github-token: ${{ secrets.PAT }}
